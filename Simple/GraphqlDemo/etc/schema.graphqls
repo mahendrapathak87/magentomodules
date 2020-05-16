@@ -1,4 +1,8 @@
 type Query {
-    demoModelData: [String!]! @doc(description: "model data") @resolver(class: "\\Simple\\GraphqlDemo\\Model\\Resolver\\ModeldataQueryResolver")
+    demoModelData: demoData @doc(description: "model data") @resolver(class: "\\Simple\\GraphqlDemo\\Model\\Resolver\\ModeldataQueryResolver")
+}
+
+type demoData {
+    modelData: [String!]! @doc(description: "child data")
 }
 

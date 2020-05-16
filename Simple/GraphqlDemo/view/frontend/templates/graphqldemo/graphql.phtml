@@ -1,0 +1,19 @@
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "graphqldemo": {
+                    "component": "Simple_GraphqlDemo/js/graphqlcomp"
+                }
+            }
+        }
+    }
+}
+
+</script>
+
+<div data-bind="scope: 'graphqldemo'">
+    <p data-bind="text: JSON.stringify($data.result)">Loading data ..........</p>
+</div>

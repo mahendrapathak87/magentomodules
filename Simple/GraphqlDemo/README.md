@@ -13,22 +13,26 @@ where http://mymagento.com is your domain name
 Magento 2.3 installation with working graphQl
 http://mymagento.com/graphql
 
-### Use google chrome extension chromiql
+### Use google chrome extension chromeiQl
 
 http://mymagento.com/graphql
 
 {
-	demoModelData  
+	demoModelData  {
+    modelData
+  }
 }
 
 desired output with dummy data
 
 {
   "data": {
-    "demoModelData": [
-      "string1",
-      "string2"
-    ]
+    "demoModelData": {
+      "modelData": [
+        "string1",
+        "string2"
+      ]
+    }
   }
 }
 
@@ -36,9 +40,13 @@ desired output with dummy data
 
 Magento 2.3.4
 
+## Description
+GraphQl provides single endpoint ie www.example.com/graphql as compared to multiple endpoints of REST api
+Solves the problem overfecthing data and underfetching data.
+
 ## Authors
 
-* **Mahendra Pathak** 
+* **Mahendra ** 
 
 
 
