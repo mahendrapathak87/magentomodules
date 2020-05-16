@@ -42,7 +42,7 @@ Magento 2.3.4
 
 ## Description
 GraphQl provides single endpoint ie www.example.com/graphql as compared to multiple endpoints of REST api
-Solves the problem overfecthing data and underfetching data.
+Solves the problem overfecthing and underfetching data.
 
 ## Authors
 
