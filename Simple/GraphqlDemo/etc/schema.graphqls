@@ -1,3 +1,7 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
+
 type Query {
     demoModelData: demoData @doc(description: "model data") @resolver(class: "\\Simple\\GraphqlDemo\\Model\\Resolver\\ModeldataQueryResolver")
 }
@@ -6,3 +10,16 @@ type demoData {
     modelData: [String!]! @doc(description: "child data")
 }
 
+type Mutation {
+    createDemodata(input: DemodataInput!): DemodataOutput @resolver(class: "\\Simple\\GraphqlDemo\\Model\\Resolver\\InsertDataToSimpleGraphqlDemo") @doc(description: "Create a new data")
+}
+
+type DemodataOutput {
+    title: String @doc(description: "")
+    description: String @doc(description: "")
+}
+
+input DemodataInput {
+    title: String @doc(description: "")
+    description: String @doc(description: "")
+}

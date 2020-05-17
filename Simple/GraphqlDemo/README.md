@@ -36,6 +36,35 @@ desired output with dummy data
   }
 }
 
+## Mutation
+POST requests, changes the state of server
+For Mutation have to given Input and Ouput 
+Sample request given as below
+
+mutation{
+  createDemodata(input:{
+    title:"Simple demo",
+    description: "Simple graphql demo"
+  }){
+      title,
+      description
+  }
+}
+
+We can specify here required response data as well means only title or description as well
+
+Sample Response output
+
+{
+  "data": {
+    "createDemodata": {
+      "title": "Simple demo",
+      "description": "Simple graphql demo"
+    }
+  }
+}
+
+
 ## Versioning
 
 Magento 2.3.4
