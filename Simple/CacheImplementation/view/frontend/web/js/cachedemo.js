@@ -6,13 +6,21 @@ define(['jquery'],function($){
             element.innerHTML =result["randomString"];
 
         });*/
-       $.get({
+        
+        var key ="simple_cache";
+        
+        if(window.sessionStorage.getItem(key)){
+             element.innerHTML = window.sessionStorage.getItem(key);
+        }else{
+             $.get({
            url: "/cacheimplementation/index/index",
-           cache: true,
            success: function(result){
+               window.sessionStorage.setItem(key,result["randomString"]);
                 element.innerHTML =result["randomString"];
            }
-       })
+       });
+        }
+      
     }
     
 })

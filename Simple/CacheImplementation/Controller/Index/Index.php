@@ -34,7 +34,8 @@ class Index extends \Magento\Framework\App\Action\Action
 		$data = ['randomString' => $this->randomString()];
         $result = $this->jsonResultFactory->create();
         $result->setData($data);
-        $this->http->setPrivateHeaders(30);
+        //set ttl header for 30 sec
+        //$this->http->setPrivateHeaders(30);
         return $result;
 	}  
     
