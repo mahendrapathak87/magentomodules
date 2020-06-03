@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<div data-bind="scope: 'sectioninfo'">
+    <?php //sectioninfo returned from sectioninfo js ,value from js component ?>
+    <p data-bind="text: sectioninfo().dummyinfo"></p>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "sectioninfo": {
+                        "component": "Simple_SectionImplementation/js/sectioninfo"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
