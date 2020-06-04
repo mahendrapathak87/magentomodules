@@ -1,8 +1,8 @@
 define(function(){
     'use strict';
     
-    return function(){
-        console.log('hello world');
+    return function(config){
+        console.log('hello world',config);
     }
     
 });
