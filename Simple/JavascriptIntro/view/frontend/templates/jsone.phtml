@@ -5,7 +5,9 @@
 <script type="text/x-magento-init">
     {
         "*" :{
-            "Simple_JavascriptIntro/js/jsone" : { }
+            "Simple_JavascriptIntro/js/jsone" : { 
+                "base_url" : "<?= $block->escapeJs($block->getBaseUrl()) ?>"
+            }
         }
     }
 </script>
