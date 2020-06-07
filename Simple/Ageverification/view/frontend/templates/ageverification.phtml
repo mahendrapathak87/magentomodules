@@ -1,0 +1,62 @@
+<?php
+/*
+* \Simple\Ageverification\Block\Ageverification $block
+*/
+$isPopupEnabled = $block->getModuleStatus();
+$ageVerificationType = $block->getAgeVerificationType();
+if($isPopupEnabled){
+?>
+    <div id="ageverification-popup">
+        <p class="ageverification-content"><?php echo $block->getPopupContent() ?></p>
+        <?php if($ageVerificationType == 'with_dob_verification') { ?>
+            <div class="field date field-dob"  data-mage-init='{
+                "Vendor_Module/js/custom-validation-dob":{
+                    "day" : "[name=\"day\"]",
+                    "month" : "[name=\"month\"]",
+                    "year" : "[name=\"year\"]",
+                    "classPrefix": "custom-dob",
+                    "maxYearDiff": 150
+                }
+            }'>
+                <label class="label" for="dob">
+                    <span><?= __('Your Birthday'); ?></span>
+                </label>
+                <div class="input-box customer-dob">
+                     <div class="dob-day">
+                         <label for="day"><?= __('DD'); ?></label>
+                        <input type="text" id="day" name="day"  title="<?= __('Day'); ?>" class="input-text required-entry" autocomplete="off">
+                    </div>
+
+                    <div class="dob-month">
+                         <label for="month"><?= __('MM'); ?></label>
+                        <input type="text" id="month" name="month" title="<?= __('Month'); ?>" class="input-text required-entry" autocomplete="off">
+                    </div>
+
+                    <div class="dob-year">
+                        <label for="year"><?= __('YYYY'); ?></label>
+                        <input type="text" id="year" name="year" title="<?= __('Year'); ?>" class="input-text required-entry" autocomplete="off">
+                    </div>    
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "ageverificaiton": {
+                        "component": "Simple_Ageverification/js/ageverification",
+                        "base_url": "<?=$block->escapeJs($block->getBaseUrl()) ?>",
+                        "cookieInterval": "<?=$block->escapeJs($block->getCookieInterval()) ?>",
+                        "ageverificationtitle": "<?=$block->escapeJs($block->getAgeVerificationPopupTitle()) ?>"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+<?php
+}
+?>
